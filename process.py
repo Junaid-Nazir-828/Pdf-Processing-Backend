@@ -1,6 +1,7 @@
 import base64
 from openai import OpenAI
 import constant
+
 def get_text_from_image(image_path, retry_count=3):
     """Extract text from image using OpenAI's Vision API with retries"""
     last_error = None

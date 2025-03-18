@@ -2,7 +2,6 @@ from utils import generate_random_string
 import fitz
 import os
 from PIL import Image
-import io
 
 def optimize_image(image_path):
     """Optimize image for better OCR results"""
