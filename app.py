@@ -10,6 +10,9 @@ from mongodb_service import MongoDBService
 app = Flask(__name__)
 mongo_service = MongoDBService()
 
+@app.route("/")
+def home():
+    return "Hello, Flask is working!", 200
 
 @app.route('/process-pdf', methods=['POST'])
 def process_pdf():
