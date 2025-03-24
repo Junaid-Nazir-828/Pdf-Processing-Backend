@@ -53,12 +53,11 @@ def process_pdf():
         print(f"Error initiating PDF processing: {e}")
         traceback.print_exc()
         
-        # Update database with error status
-        # try:
-        #     if 'analysis_id' in locals():
-        #         mongo_service.update_analysis_status(analysis_id, "FAILED", error_message=str(e))
-        # except Exception as db_error:
-        #     print(f"Error updating database: {db_error}")
+        try:
+            if 'analysis_id' in locals():
+                mongo_service.update_analysis_status(analysis_id, "FAILED", error_message=str(e))
+        except Exception as db_error:
+            print(f"Error updating database: {db_error}")
             
         return jsonify({'error': str(e)}), 500
 
